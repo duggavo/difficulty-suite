@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Diff</title>
+	<script src="diff.js"></script>
+</head>
+
+<body>
+	Window: <input id="window" type="number" placeholder="window" value="72" onchange="compute()">
+	Algo: <select id="algo" onchange="compute()">
+		<option value="ma">MA</option>
+		<option value="lwma">LWMA</option>
+		<option value="cn">Cryptonote</option>
+		<option value="ema">EMA</option>
+	</select>
+	Situation: <select id="situation" onchange="compute()">
+		<option value="stable">Stable nethash</option>
+		<option value="hopping">Hopping attack</option>
+		<option value="sine">Sine hashrate</option>
+	</select>
+	<input type="checkbox" checked onchange="compute()">Use window correction</checkbox>
+	<button onclick="compute()">Compute</button>
+	Devt: <code id="devt">n/a</code> Actual window: <span id="actualWin">n/a</span>
+	<div>
+		<canvas id="myChart"></canvas>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
